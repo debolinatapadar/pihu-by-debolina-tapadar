@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PIHU | Debolina Tapadar</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f0f0f;
+    color: #eaeaea;
+}
+
+/* HEADER */
+
+header {
+    background: linear-gradient(90deg, #800000, #000000);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 45px;
+    letter-spacing: 4px;
+    margin: 0;
+    color: #39ff14;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #ccc;
+}
+
+/* NAV */
+
+nav {
+    text-align: center;
+    padding: 15px;
+    background: #111;
+    border-bottom: 1px solid #39ff14;
+}
+
+nav a {
+    color: #eaeaea;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #39ff14;
+}
+
+/* SECTION */
+
+.section {
+    padding: 50px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 40px;
+    color: #800000;
+    letter-spacing: 2px;
+}
+
+/* BLOG CARDS */
+
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.blog-card {
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    transition: 0.4s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(57,255,20,0.4);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-content {
+    padding: 20px;
+}
+
+.blog-content h3 {
+    margin-top: 0;
+    color: #39ff14;
+}
+
+.blog-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #800000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    color: #39ff14;
+}
+
+/* FOOTER */
+
+footer {
+    background: #000;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    color: #777;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>PIHU</h1>
+    <p>By Debolina Tapadar</p>
+    <p>Blogs • Poems • Cinema • Fashion • Ideology</p>
+</header>
+
+<nav>
+    <a href="#blogs">Blogs</a>
+    <a href="#poems">Poems</a>
+    <a href="#movies">Movies</a>
+    <a href="#fashion">Fashion</a>
+</nav>
+
+<!-- BLOG SECTION -->
+
+<section id="blogs" class="section">
+    <h2>My Blogs</h2>
+
+    <div class="blog-container">
+
+        <div class="blog-card">
+            <img src="https://source.unsplash.com/600x400/?writing,dark" alt="Blog Image">
+            <div class="blog-content">
+                <h3>The Art of Overthinking</h3>
+                <p>A deep dive into how emotions shape our decisions and how silence speaks louder than chaos.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="https://source.unsplash.com/600x400/?aesthetic,moody" alt="Blog Image">
+            <div class="blog-content">
+                <h3>Midnight Thoughts</h3>
+                <p>Why nights feel heavier and why creativity blooms when the world goes quiet.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- POEMS -->
+
+<section id="poems" class="section">
+    <h2>My Poems</h2>
+
+    <div class="blog-container">
+
+        <div class="blog-card">
+            <img src="https://source.unsplash.com/600x400/?poetry,rose" alt="Poem Image">
+            <div class="blog-content">
+                <h3>She Was Fire</h3>
+                <p>A poem about strength, chaos, softness, and rebellion stitched into one soul.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- MOVIES -->
+
+<section id="movies" class="section">
+    <h2>Movie Ideology</h2>
+
+    <div class="blog-container">
+
+        <div class="blog-card">
+            <img src="https://source.unsplash.com/600x400/?cinema,dark" alt="Movie Image">
+            <div class="blog-content">
+                <h3>Beyond the Script</h3>
+                <p>Breaking down symbolism, character psychology, and hidden metaphors in cinema.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- FASHION -->
+
+<section id="fashion" class="section">
+    <h2>Fashion Ideology</h2>
+
+    <div class="blog-container">
+
+        <div class="blog-card">
+            <img src="https://source.unsplash.com/600x400/?fashion,black" alt="Fashion Image">
+            <div class="blog-content">
+                <h3>Power Dressing</h3>
+                <p>Why maroon, black and green represent dominance, elegance and fearless identity.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    © 2026 PIHU BY DEBOLINA TAPADAR | All Rights Reserved
+</footer>
+
+</body>
+</html>
