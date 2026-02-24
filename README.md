@@ -16,7 +16,7 @@ Designed with a **Maroon, Black, and Green aesthetic**, this website reflects in
 
 After enabling GitHub Pages, your site will be live at:
 
-https://yourusername.github.io/pihu-by-debolina-tapadar/
+https://debolinatapadar.github.io/pihu-by-debolina-tapadar/
 
 ---
 
