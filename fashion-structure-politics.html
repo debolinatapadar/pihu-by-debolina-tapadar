@@ -8,7 +8,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
+.fashion-image {
+    width: 100%;
+    max-width: 1000px;
+    display: block;
+    margin: 50px auto 60px;
+    border-radius: 6px;
+    filter: grayscale(20%) contrast(95%) brightness(98%);
+    transition: 0.4s ease;
+}
 
+.fashion-image:hover {
+    filter: grayscale(10%) contrast(100%) brightness(100%);
+}
 body {
     margin: 0;
     font-family: 'Cormorant Garamond', serif;
@@ -62,7 +74,12 @@ a:hover {
 <body>
 
 <h1>The Structure of the Fashion Industry, Cultural Shifts, Economic Change — and the Question of Politics</h1>
- <img src="fashion-structure.jpeg" alt="Fashion Industry Analysis">
+    <img src="fashion-structure.jpeg"
+     alt="Structure of the Fashion Industry"
+     class="fashion-image">
+ <p style="text-align:center; font-size:14px; color:#8b7e6b; margin-top:-30px; margin-bottom:50px;">
+Where commerce meets culture.
+</p>
 <p>
 Fashion today is not just about clothing. It is a global economic force, a cultural mirror, and increasingly, a platform for social expression. Over the past few decades, its structure, cultural role, and economic model have changed dramatically.
 </p>
