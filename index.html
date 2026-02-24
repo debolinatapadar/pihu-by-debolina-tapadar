@@ -103,6 +103,14 @@ nav a:hover {
     object-fit: cover;
     filter: brightness(95%);
 }
+    .poem-image {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin: 40px auto 30px;
+    border-radius: 6px;
+    filter: grayscale(25%) contrast(95%) brightness(95%);
+}
 
 .blog-content {
     padding: 30px;
@@ -173,7 +181,12 @@ footer {
 
         
         <div class="blog-card">
-    <img src="images/withered-flowers.jpg" alt="Withered Flowers">
+            <img src="images/withered-flower.jpg" 
+     alt="Withered Flower"
+     class="poem-image">
+   <p style="text-align:center; font-size:14px; color:#8b7e6b; margin-top:-15px; margin-bottom:40px;">
+A few things fade quietly.
+</p>
     <div class="blog-content">
         <h3>A Few Withered Flowers</h3>
         <p>
@@ -306,6 +319,7 @@ footer {
 </body>
 
 </html>
+
 
 
 
