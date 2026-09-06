@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The World Is Open Again — But Is It the Same World? | PIHU</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f6f3ed;
+            color: #252525;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* HEADER */
+
+        header {
+            text-align: center;
+            padding: 65px 20px 40px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 54px;
+            font-weight: 500;
+            letter-spacing: 5px;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            color: #777;
+            font-size: 15px;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            text-align: center;
+            background: #fff;
+            border-top: 1px solid #e4ded4;
+            border-bottom: 1px solid #e4ded4;
+            padding: 18px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #292929;
+            margin: 0 20px;
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: #8b6f47;
+        }
+
+        /* ARTICLE */
+
+        .article {
+            max-width: 1100px;
+            margin: auto;
+            padding: 90px 25px;
+        }
+
+        .category {
+            text-align: center;
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: #8b6f47;
+            margin-bottom: 25px;
+        }
+
+        .article-title {
+            text-align: center;
+            font-size: clamp(45px, 7vw, 82px);
+            line-height: .95;
+            font-weight: 500;
+            margin: 0 auto 25px;
+            max-width: 950px;
+        }
+
+        .subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: auto auto 65px;
+            font-size: 22px;
+            line-height: 1.5;
+            color: #707070;
+        }
+
+        /* MAIN IMAGE */
+
+        .hero {
+            width: 100%;
+            height: 620px;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 70px;
+        }
+
+        /* ARTICLE BODY */
+
+        .article-body {
+            max-width: 780px;
+            margin: auto;
+        }
+
+        .article-body p {
+            font-size: 18px;
+            line-height: 1.9;
+            margin-bottom: 28px;
+        }
+
+        .article-body h2 {
+            font-size: 36px;
+            line-height: 1.1;
+            font-weight: 500;
+            margin-top: 75px;
+            margin-bottom: 28px;
+        }
+
+        .article-body strong {
+            font-weight: 600;
+        }
+
+        /* STATEMENT */
+
+        .statement {
+            margin: 60px 0;
+            padding: 35px 30px;
+            border-left: 2px solid #8b6f47;
+            font-size: 30px;
+            line-height: 1.4;
+            font-style: italic;
+        }
+
+        /* SUPPORTING IMAGES */
+
+        .article-image {
+            width: 100%;
+            max-height: 580px;
+            object-fit: cover;
+            display: block;
+            margin: 60px 0 15px;
+        }
+
+        .caption {
+            text-align: center;
+            color: #858585;
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            margin-bottom: 60px;
+        }
+
+        /* LIST */
+
+        .article-list {
+            margin: 35px 0 45px;
+            padding-left: 30px;
+        }
+
+        .article-list li {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+
+        /* COMPARISON */
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            margin: 45px 0 65px;
+        }
+
+        .comparison-box {
+            padding: 35px;
+            background: #ebe6dd;
+        }
+
+        .comparison-box h3 {
+            font-size: 25px;
+            margin: 0 0 20px;
+            font-weight: 500;
+        }
+
+        .comparison-box p {
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        /* ENDING */
+
+        .ending {
+            margin-top: 90px;
+            padding-top: 45px;
+            border-top: 1px solid #d8d1c6;
+            text-align: center;
+        }
+
+        .ending p {
+            font-size: 28px;
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        /* BACK LINK */
+
+        .back {
+            display: block;
+            width: fit-content;
+            margin: 65px auto 0;
+            text-decoration: none;
+            color: #8b6f47;
+            font-size: 14px;
+            letter-spacing: 1.5px;
+        }
+
+        .back:hover {
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #fff;
+            border-top: 1px solid #e4ded4;
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            header h1 {
+                font-size: 42px;
+            }
+
+            nav a {
+                margin: 0 8px;
+                font-size: 13px;
+            }
+
+            .article {
+                padding: 65px 20px;
+            }
+
+            .hero {
+                height: 430px;
+            }
+
+            .article-body p {
+                font-size: 17px;
+            }
+
+            .statement {
+                font-size: 24px;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <h1>PIHU</h1>
+
+    <p>By Debolina Tapadar</p>
+
+    <p>Blogs • Poems • Cinema • Fashion • Ideology</p>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <a href="index.html#blogs">Blogs</a>
+    <a href="index.html#poems">Poems</a>
+    <a href="index.html#movies">Movies</a>
+    <a href="index.html#fashion">Fashion</a>
+
+</nav>
+
+
+<!-- ARTICLE -->
+
+<main class="article">
+
+    <div class="category">
+        GLOBAL MOBILITY / ECONOMY
+    </div>
+
+
+    <h1 class="article-title">
+        The World Is Open Again —
+        But Is It the Same World?
+    </h1>
+
+
+    <p class="subtitle">
+        Foreign investment, world travel and what has changed
+        about going global.
+    </p>
+
+
+    <!-- =====================================================
+         MAIN IMAGE
+         Upload: global-mobility-main.png
+         ===================================================== -->
+
+    <img
+        src="global-mobility-main.png"
+        alt="Global travel and international mobility"
+        class="hero"
+    >
+
+
+    <div class="article-body">
+
+
+        <p>
+            There was a time when going abroad felt like a major
+            life event.
+        </p>
+
+        <p>
+            You saved for the trip. You planned months ahead.
+            You carried paper maps, exchanged currency at the airport
+            and probably took far too many photographs because every
+            unfamiliar street felt worth remembering.
+        </p>
+
+        <p>
+            Investing abroad was even more distant.
+        </p>
+
+        <p>
+            Foreign markets belonged to large companies, wealthy
+            investors and financial institutions. Buying something
+            overseas required considerably more effort than opening
+            an app today.
+        </p>
+
+        <p>
+            Now, the world appears much smaller.
+        </p>
+
+        <p>
+            A flight can take us across continents overnight.
+            A person in India can invest in a foreign company from
+            a phone. Someone in Europe can work remotely from
+            Southeast Asia. A startup can have employees on five
+            continents before it has a physical headquarters.
+        </p>
+
+        <div class="statement">
+            The world has become easier to access,
+            but it has also become more complicated to navigate.
+        </div>
+
+
+        <!-- WORLD HAS BECOME SMALLER -->
+
+        <h2>
+            The World Has Become Smaller
+        </h2>
+
+        <p>
+            Technology has changed our relationship with distance.
+        </p>
+
+        <p>
+            Twenty years ago, travelling internationally required
+            considerably more preparation. Today, passports can be
+            digitally linked to applications, accommodation can be
+            booked within minutes and translation tools can help
+            people communicate across languages.
+        </p>
+
+        <p>
+            The internet has also changed the way we choose destinations.
+        </p>
+
+        <p>
+            People no longer discover a city only through travel
+            agencies or guidebooks. They discover it through TikTok,
+            Instagram, YouTube, blogs and recommendations generated
+            by algorithms.
+        </p>
+
+        <p>
+            A restaurant in Tokyo can become a global sensation
+            overnight.
+        </p>
+
+        <p>
+            A small village in Italy can suddenly appear on millions
+            of travel feeds.
+        </p>
+
+        <p>
+            A beach that very few people had heard of can become
+            overcrowded within a single season.
+        </p>
+
+        <p>
+            Travel has become both
+            <strong>more accessible and more visible.</strong>
+        </p>
+
+
+        <!-- =====================================================
+             TRAVEL IMAGE
+             Upload: global-mobility-travel.png
+             ===================================================== -->
+
+        <img
+            src="global-mobility-travel.png"
+            alt="International travel and global tourism"
+            class="article-image"
+        >
+
+        <div class="caption">
+            THE POST-PANDEMIC WORLD OF TRAVEL
+        </div>
+
+
+        <!-- POST PANDEMIC TRAVELLER -->
+
+        <h2>
+            The Post-Pandemic Traveller Is Different
+        </h2>
+
+        <p>
+            The pandemic created an unusual break in the history
+            of international travel.
+        </p>
+
+        <p>
+            For a period, the world stopped moving.
+        </p>
+
+        <p>
+            Airports emptied. Borders closed. Hotels struggled.
+            Tourism-dependent economies suffered.
+        </p>
+
+        <p>
+            But when international travel returned, people did not
+            simply return to their old habits.
+        </p>
+
+        <p>
+            Many travellers became more interested in experiences
+            rather than simply collecting destinations.
+        </p>
+
+        <p>
+            Longer stays became attractive.
+        </p>
+
+        <p>
+            Remote work created the possibility of combining
+            employment with travel.
+        </p>
+
+        <p>
+            People began thinking about wellness, food, culture,
+            nature and local experiences rather than simply visiting
+            famous landmarks.
+        </p>
+
+        <p>
+            UN Tourism reported approximately
+            <strong>1.4 billion international tourist arrivals
+            in 2024</strong>, bringing international tourism back
+            to roughly pre-pandemic levels.
+        </p>
+
+        <div class="statement">
+            People did not lose their desire to travel.
+        </div>
+
+
+        <!-- TRAVEL IS NOT THE SAME -->
+
+        <h2>
+            But “Travel Is Back” Doesn't Mean Travel Is the Same
+        </h2>
+
+        <p>
+            The current travel environment is more complicated
+            than the headline numbers suggest.
+        </p>
+
+        <p>
+            Airfare, accommodation costs, visa rules, currency
+            movements and geopolitical tensions can all change
+            the attractiveness of a destination.
+        </p>
+
+        <p>
+            Political decisions can suddenly influence tourism.
+        </p>
+
+        <p>
+            A passport may determine how easily you can enter a country.
+        </p>
+
+        <p>
+            A currency may determine how long you can afford to stay.
+        </p>
+
+        <p>
+            A geopolitical crisis can change flight routes.
+        </p>
+
+        <p>
+            An economic downturn can change hotel prices.
+        </p>
+
+        <p>
+            Government policy can influence whether millions of
+            people decide to visit.
+        </p>
+
+        <div class="statement">
+            Travel is not separate from politics anymore.
+        </div>
+
+
+        <!-- FOREIGN INVESTMENT -->
+
+        <h2>
+            And Then There Is Foreign Investment
+        </h2>
+
+        <p>
+            The investment story is even more complicated.
+        </p>
+
+        <p>
+            At first glance, 2025 looked encouraging.
+        </p>
+
+        <p>
+            Global foreign direct investment recovered, but the
+            recovery remained uneven and concentrated.
+        </p>
+
+        <p>
+            This is very different from the idea of a world where
+            money simply flows wherever opportunities are greatest.
+        </p>
+
+        <p>
+            Today, investors are increasingly asking:
+        </p>
+
+        <div class="statement">
+
+            Where is the safest place to invest?
+
+            <br><br>
+
+            Where are governments encouraging investment?
+
+            <br><br>
+
+            Where are supply chains moving?
+
+            <br><br>
+
+            Where is technology being built?
+
+        </div>
+
+
+        <!-- NEW GEOGRAPHY -->
+
+        <h2>
+            The New Geography of Investment
+        </h2>
+
+        <p>
+            For decades, globalisation was built around efficiency.
+        </p>
+
+        <p>
+            Companies searched for cheaper production.
+            Factories moved. Supply chains stretched across continents.
+        </p>
+
+        <p>
+            Products could contain components from dozens of countries
+            before reaching a consumer.
+        </p>
+
+        <p>
+            That model is now being reconsidered.
+        </p>
+
+        <p>
+            Trade tensions, tariffs, national-security concerns and
+            supply-chain disruptions are encouraging companies to
+            diversify where they manufacture and source goods.
+        </p>
+
+        <div class="statement">
+            Globalisation is not necessarily ending.
+            <br>
+            It is changing its shape.
+        </div>
+
+        <p>
+            Instead of asking only:
+        </p>
+
+        <blockquote class="statement">
+            “Where can we produce this most cheaply?”
+        </blockquote>
+
+        <p>
+            companies are increasingly asking:
+        </p>
+
+        <blockquote class="statement">
+            “Where can we produce this reliably, safely and strategically?”
+        </blockquote>
+
+
+        <!-- STRATEGIC INVESTMENT -->
+
+        <h2>
+            The Rise of Strategic Investment
+        </h2>
+
+        <p>
+            One of the clearest examples is technology.
+        </p>
+
+        <p>
+            Data centres, semiconductors, artificial intelligence
+            infrastructure, renewable energy and critical minerals
+            have become strategic assets.
+        </p>
+
+        <p>
+            Investment is therefore increasingly following
+            national priorities.
+        </p>
+
+        <ul class="article-list">
+
+            <li>AI infrastructure</li>
+
+            <li>Semiconductor manufacturing</li>
+
+            <li>Clean-energy projects</li>
+
+            <li>Advanced manufacturing</li>
+
+            <li>Data centres</li>
+
+            <li>Research and development</li>
+
+            <li>Skilled workers</li>
+
+        </ul>
+
+
+        <!-- =====================================================
+             INVESTMENT IMAGE
+             Upload: global-mobility-investment.png
+             ===================================================== -->
+
+        <img
+            src="global-mobility-investment.png"
+            alt="International investment and global financial markets"
+            class="article-image"
+        >
+
+        <div class="caption">
+            CAPITAL, TECHNOLOGY AND THE NEW GLOBAL ECONOMY
+        </div>
+
+
+        <!-- INDIA -->
+
+        <h2>
+            India and the New Global Opportunity
+        </h2>
+
+        <p>
+            India is an especially interesting example.
+        </p>
+
+        <p>
+            The country is increasingly positioned not simply as
+            a large consumer market but as a destination for
+            manufacturing, technology and infrastructure investment.
+        </p>
+
+        <p>
+            But there is a fascinating contradiction.
+        </p>
+
+        <p>
+            India can be economically attractive while foreign
+            portfolio investors remain cautious.
+        </p>
+
+        <p>
+            This demonstrates why
+            <strong>“Is India a good investment?”</strong>
+            is too simplistic a question.
+        </p>
+
+        <p>
+            The answer depends on what you are investing in,
+            for how long, in which currency, and what risks you
+            are willing to accept.
+        </p>
+
+
+        <!-- INVEST ABROAD -->
+
+        <h2>
+            So, Is It a Good Time to Invest Abroad?
+        </h2>
+
+        <p>
+            There isn't one universal answer.
+        </p>
+
+        <p>
+            But there is a compelling argument that this is an
+            important time to understand international investment.
+        </p>
+
+        <p>
+            The world is undergoing a structural transition.
+        </p>
+
+        <p>
+            Capital is moving toward technology.
+            Supply chains are being redesigned.
+            Countries are competing for manufacturing.
+            Energy systems are changing.
+            AI is creating enormous infrastructure requirements.
+        </p>
+
+        <div class="statement">
+            Understand why money is moving
+            before deciding to follow it.
+        </div>
+
+
+        <!-- TRAVELLING -->
+
+        <h2>
+            What About Travelling the World?
+        </h2>
+
+        <p>
+            Travel is a different kind of investment.
+        </p>
+
+        <p>
+            You don't necessarily receive a financial return.
+            You receive experiences.
+        </p>
+
+        <p>
+            Travelling can expose someone to different languages,
+            architecture, food, political systems, religions,
+            businesses and ways of living.
+        </p>
+
+        <p>
+            It can change how someone thinks about their own country.
+        </p>
+
+        <p>
+            It can even influence career decisions.
+        </p>
+
+        <p>
+            Travel can therefore function as a form of education.
+        </p>
+
+        <div class="statement">
+            Travelling is no longer just about seeing more places.
+            It is about understanding them.
+        </div>
+
+
+        <!-- GLOBAL CITIZEN -->
+
+        <h2>
+            From Tourist to Global Citizen
+        </h2>
+
+        <p>
+            Perhaps this is the biggest change of all.
+        </p>
+
+        <p>
+            Earlier generations often travelled abroad primarily
+            as tourists.
+        </p>
+
+        <p>
+            Today, the boundaries are less clear.
+        </p>
+
+        <p>
+            Someone might study in Germany, work for an American
+            company, invest in India, spend several months in Thailand,
+            and maintain family connections across three countries.
+        </p>
+
+        <p>
+            The world has become more interconnected at an
+            individual level.
+        </p>
+
+        <p>
+            But it has also created complexity.
+        </p>
+
+        <p>
+            Taxes become international.
+            Currencies matter.
+            Visas matter.
+            Political stability matters.
+            Healthcare systems matter.
+        </p>
+
+
+        <!-- COMPARISON -->
+
+        <h2>
+            What Has Changed Over the Years?
+        </h2>
+
+        <div class="comparison">
+
+            <div class="comparison-box">
+
+                <h3>Then</h3>
+
+                <p>
+                    International travel was expensive and relatively
+                    infrequent for many people.
+                </p>
+
+                <p>
+                    Foreign investment required specialised
+                    financial infrastructure.
+                </p>
+
+                <p>
+                    Information about countries was limited.
+                </p>
+
+                <p>
+                    Global careers were relatively unusual.
+                </p>
+
+                <p>
+                    International businesses were dominated by
+                    large corporations.
+                </p>
+
+            </div>
+
+
+            <div class="comparison-box">
+
+                <h3>Now</h3>
+
+                <p>
+                    Travel can be planned from a smartphone.
+                </p>
+
+                <p>
+                    Financial markets are accessible to ordinary
+                    investors.
+                </p>
+
+                <p>
+                    People can work remotely across borders.
+                </p>
+
+                <p>
+                    Small businesses can sell internationally.
+                </p>
+
+                <p>
+                    Students can study almost anywhere.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="statement">
+            More access does not automatically mean
+            better decisions.
+        </div>
+
+
+        <!-- RISKS -->
+
+        <h2>
+            The New Risks We Are Looking At
+        </h2>
+
+        <p>
+            The future of global mobility will not be determined
+            by economics alone.
+        </p>
+
+        <p>
+            We have to watch several forces simultaneously.
+        </p>
+
+        <p>
+            <strong>Geopolitics.</strong>
+            International tensions can affect investment,
+            tourism, trade and currency markets.
+        </p>
+
+        <p>
+            <strong>Climate.</strong>
+            Extreme weather can influence where people want to
+            live and where companies want to build.
+        </p>
+
+        <p>
+            <strong>Artificial Intelligence.</strong>
+            AI is changing where capital is going and which
+            countries can compete for technological investment.
+        </p>
+
+        <p>
+            <strong>Currency.</strong>
+            Exchange-rate movements can dramatically change
+            the real cost of travelling or investing internationally.
+        </p>
+
+        <p>
+            <strong>Demographics.</strong>
+            Aging populations and younger populations will
+            influence labour markets and consumption.
+        </p>
+
+        <p>
+            <strong>Regulation.</strong>
+            Visa rules, investment restrictions, tariffs and
+            data regulations can reshape international
+            opportunities surprisingly quickly.
+        </p>
+
+
+        <!-- FUTURE TRAVEL -->
+
+        <h2>
+            The World Tour of the Future
+        </h2>
+
+        <p>
+            The future traveller may not simply ask:
+        </p>
+
+        <blockquote class="statement">
+            “Where should I go?”
+        </blockquote>
+
+        <p>
+            They may ask:
+        </p>
+
+        <blockquote class="statement">
+            “Where is changing?”
+        </blockquote>
+
+        <p>
+            That is a completely different question.
+        </p>
+
+        <p>
+            Instead of visiting only the most famous capitals,
+            people may become interested in emerging cities.
+        </p>
+
+        <p>
+            Instead of spending two days taking photographs,
+            travellers may stay for several weeks.
+        </p>
+
+        <p>
+            Instead of separating travel from work,
+            they may combine the two.
+        </p>
+
+        <p>
+            Travel could become less about collecting countries
+            and more about understanding places.
+        </p>
+
+
+        <!-- FUTURE INVESTOR -->
+
+        <h2>
+            And the Investor of the Future?
+        </h2>
+
+        <p>
+            The same principle applies.
+        </p>
+
+        <p>
+            The investor of the future may not simply ask:
+        </p>
+
+        <blockquote class="statement">
+            “Which country's stock market is going up?”
+        </blockquote>
+
+        <p>
+            They may ask:
+        </p>
+
+        <blockquote class="statement">
+            “Which structural change is creating
+            the next decade of demand?”
+        </blockquote>
+
+        <p>
+            AI? Energy? Semiconductors? Manufacturing?
+            Healthcare? Water? Infrastructure? Digital services?
+        </p>
+
+
+        <!-- GO GLOBAL -->
+
+        <h2>
+            So, Should We Go Global?
+        </h2>
+
+        <div class="statement">
+            Yes — but more intelligently than before.
+        </div>
+
+        <p>
+            The world is still incredibly interconnected.
+        </p>
+
+        <p>
+            International tourism has recovered strongly.
+            Global investment has begun recovering after a difficult
+            period. Technology has dramatically reduced the barriers
+            to communication and financial participation.
+        </p>
+
+        <p>
+            But the era of assuming that globalisation automatically
+            means fewer risks is over.
+        </p>
+
+        <p>
+            The world is becoming simultaneously
+            <strong>more connected and more fragmented.</strong>
+        </p>
+
+        <p>
+            Money crosses borders faster.
+            People travel farther.
+            Businesses operate internationally.
+        </p>
+
+        <p>
+            But governments are also paying more attention to
+            national security, supply chains, strategic industries
+            and domestic resilience.
+        </p>
+
+
+        <!-- FINAL SECTION -->
+
+        <h2>
+            What Are We Really Looking At?
+        </h2>
+
+        <p>
+            Perhaps the question isn't whether 2026 is the perfect
+            year to invest abroad or travel around the world.
+        </p>
+
+        <p>
+            There may never be a perfect year.
+        </p>
+
+        <p>
+            There will always be political uncertainty.
+            There will always be currency movements, economic cycles
+            and unexpected events.
+        </p>
+
+        <p>
+            What has changed is that the world is giving individuals
+            <strong>more ways to participate in globalisation
+            than ever before.</strong>
+        </p>
+
+        <p>
+            We can travel.
+        </p>
+
+        <p>
+            We can study.
+        </p>
+
+        <p>
+            We can work.
+        </p>
+
+        <p>
+            We can invest.
+        </p>
+
+        <p>
+            We can build businesses.
+        </p>
+
+        <p>
+            We can meet people.
+        </p>
+
+        <p>
+            We can learn.
+        </p>
+
+
+        <!-- ENDING -->
+
+        <div class="ending">
+
+            <p>
+                Access alone isn't enough.
+            </p>
+
+            <p>
+                The next generation of global citizens will need
+                something more valuable than a passport or a
+                brokerage account.
+            </p>
+
+            <p>
+                They will need <strong>context.</strong>
+            </p>
+
+            <p>
+                Because the future of globalisation isn't simply
+                about <strong>going everywhere.</strong>
+            </p>
+
+            <p>
+                It is about understanding
+                <strong>where the world is going.</strong>
+            </p>
+
+            <p>
+                And perhaps that is the most interesting journey
+                of all.
+            </p>
+
+        </div>
+
+
+        <!-- BACK TO BLOGS -->
+
+        <a href="index.html#blogs" class="back">
+            ← BACK TO BLOGS
+        </a>
+
+    </div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 PIHU BY DEBOLINA TAPADAR | All Rights Reserved
+
+</footer>
+
+
+</body>
+
+</html>
