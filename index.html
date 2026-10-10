@@ -1,500 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PIHU | Debolina Tapadar</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PIHU — a personal journal of blogs, poems, cinema, fashion and ideology by Debolina Tapadar.">
+  <title>PIHU | Debolina Tapadar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #282421;
+      --muted: #766c62;
+      --paper: #f7f3ed;
+      --white: #fffdfa;
+      --line: #ded5c9;
+      --accent: #9a5d49;
+      --accent-soft: #ead8cc;
+      --sage: #8b927c;
+      --shadow: 0 22px 60px rgba(66, 47, 34, .10);
+    }
 
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; }
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
+    /* COVER — kept intentionally close to the original introduction */
+    .hero {
+      min-height: 91vh;
+      position: relative;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      padding: 72px 7vw;
+      background:
+        radial-gradient(circle at 14% 16%, rgba(234,216,204,.75), transparent 28%),
+        radial-gradient(circle at 88% 78%, rgba(139,146,124,.24), transparent 25%),
+        var(--paper);
+    }
+    .hero::before, .hero::after {
+      content: '';
+      position: absolute;
+      border: 1px solid rgba(154,93,73,.28);
+      border-radius: 50%;
+      transform: rotate(-21deg);
+      pointer-events: none;
+    }
+    .hero::before { width: 38vw; height: 56vw; left: -17vw; top: 8%; }
+    .hero::after { width: 34vw; height: 51vw; right: -13vw; bottom: -9%; }
+    .hero-inner { position: relative; z-index: 1; max-width: 980px; text-align: center; }
+    .eyebrow {
+      margin: 0 0 26px;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      margin: 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(86px, 18vw, 220px);
+      font-weight: 500;
+      letter-spacing: .08em;
+      line-height: .78;
+    }
+    .hero-subtitle {
+      margin: 30px 0 0;
+      color: var(--muted);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(19px, 2.5vw, 30px);
+      letter-spacing: .08em;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 32px auto 0;
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .08em;
+    }
+    .hero-tags span { padding: 8px 13px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,253,250,.48); }
+    .scroll-cue { margin-top: 58px; color: var(--accent); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; }
 
-body {
-    margin: 0;
-    font-family: 'Cormorant Garamond', serif;
-    background: #f8f6f2;
-    color: #2c2c2c;
-}
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 30px;
+      padding: 17px 20px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,253,250,.92);
+      backdrop-filter: blur(16px);
+    }
+    .site-nav a { color: var(--muted); text-decoration: none; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+    .site-nav a:hover { color: var(--accent); }
 
-/* HEADER */
+    .section {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 112px 5vw;
+    }
+    .section-heading { display: grid; grid-template-columns: 88px 1fr; align-items: end; gap: 22px; margin-bottom: 52px; }
+    .section-number { color: var(--accent); font-size: 12px; letter-spacing: .2em; }
+    .section h2 {
+      margin: 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(42px, 6vw, 76px);
+      font-weight: 500;
+      line-height: .9;
+    }
+    .section-intro { grid-column: 2; max-width: 540px; margin: 15px 0 0; color: var(--muted); font-size: 14px; }
+    .section-divider { height: 1px; margin: 0 0 52px; background: var(--line); }
 
-header {
-    padding: 80px 20px 50px;
-    text-align: center;
-    background: #f8f6f2;
-}
+    .card-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
+    .card {
+      grid-column: span 6;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--white);
+      box-shadow: 0 1px 0 rgba(255,255,255,.7);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .card.wide { grid-column: span 7; }
+    .card.narrow { grid-column: span 5; }
+    .card-image {
+      position: relative;
+      min-height: 250px;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--accent-soft), #e6e1d7 50%, #c9d0c0);
+    }
+    .card-image img { display: block; width: 100%; height: 100%; min-height: 250px; object-fit: cover; filter: saturate(.78) contrast(.96); transition: transform .5s ease; }
+    .card:hover .card-image img { transform: scale(1.04); }
+    .card-image.contain img { object-fit: contain; background: #f3eee7; }
+    .card-image::after { content: attr(data-label); position: absolute; right: 18px; bottom: 15px; padding: 6px 9px; color: var(--white); background: rgba(40,36,33,.72); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; }
+    .card-image.missing { display: grid; place-items: center; min-height: 250px; }
+    .card-image.missing::before { content: 'PIHU'; color: rgba(40,36,33,.35); font-family: 'Cormorant Garamond', serif; font-size: 54px; letter-spacing: .16em; }
+    .card-image.missing img { display: none; }
+    .card-body { padding: 30px 32px 34px; }
+    .card-kicker { margin: 0 0 12px; color: var(--accent); font-size: 10px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; }
+    .card h3 { margin: 0 0 15px; font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 3vw, 39px); font-weight: 500; line-height: 1.02; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+    .card p + p { margin-top: 16px; }
+    .read-more { display: inline-flex; align-items: center; gap: 10px; margin-top: 25px; color: var(--accent); font-size: 11px; letter-spacing: .15em; text-decoration: none; text-transform: uppercase; }
+    .read-more::after { content: '↗'; font-size: 16px; transition: transform .2s ease; }
+    .read-more:hover::after { transform: translate(3px, -3px); }
 
-header h1 {
-    font-size: 56px;
-    letter-spacing: 6px;
-    margin: 0;
-    font-weight: 500;
-}
+    .poem-card { background: #f0ebe3; }
+    .poem-card .card-image { min-height: 210px; background: #dfd8cc; }
+    .poem-card .card-image img { min-height: 210px; filter: grayscale(22%) sepia(10%) contrast(.94); }
+    .poem-card .card-body { padding-top: 28px; }
+    .poem-card .card h3 { font-size: 35px; }
+    .poem-text { font-family: 'Cormorant Garamond', serif; font-size: 17px !important; line-height: 1.55 !important; color: #5c5048 !important; }
 
-header p {
-    margin-top: 12px;
-    font-size: 16px;
-    color: #6b6b6b;
-}
+    .statement {
+      margin: 0 auto 30px;
+      padding: 30px 0 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      line-height: 1.15;
+      text-align: center;
+    }
+    footer { padding: 52px 24px; border-top: 1px solid var(--line); color: var(--muted); text-align: center; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
 
-/* NAVIGATION */
-
-nav {
-    text-align: center;
-    padding: 18px;
-    border-top: 1px solid #e8e3da;
-    border-bottom: 1px solid #e8e3da;
-    background: #ffffff;
-}
-
-nav a {
-    color: #2c2c2c;
-    text-decoration: none;
-    margin: 0 22px;
-    font-size: 15px;
-    letter-spacing: 1px;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #8b6f47;
-}
-
-/* SECTIONS */
-
-.section {
-    padding: 90px 20px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-.section h2 {
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 60px;
-    font-weight: 500;
-    letter-spacing: 2px;
-}
-
-/* BLOG CARDS */
-
-.blog-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 40px;
-}
-
-.blog-card {
-    background: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid #e8e3da;
-    transition: 0.4s ease;
-}
-
-.blog-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
-}
-
-.blog-card img {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-    filter: brightness(95%);
-}
-    .poem-image {
-    width: 100%;
-    max-width: 500px;
-    display: block;
-    margin: 40px auto 30px;
-    border-radius: 6px;
-    filter: grayscale(25%) contrast(95%) brightness(95%);
-}
-
-.blog-content {
-    padding: 30px;
-}
-
-.blog-content h3 {
-    margin-top: 0;
-    font-size: 22px;
-    font-weight: 500;
-}
-
-.blog-content p {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #6b6b6b;
-}
-    .law-roach-main-image {
-    width: 100% !important;
-    height: 420px !important;
-    object-fit: contain !important;
-    object-position: center center !important;
-    display: block;
-    background: #f8f5f1;
-}
-
-.read-more {
-    display: inline-block;
-    margin-top: 18px;
-    color: #8b6f47;
-    text-decoration: none;
-    font-size: 14px;
-    letter-spacing: 1px;
-}
-
-.read-more:hover {
-    text-decoration: underline;
-}
-
-/* FOOTER */
-
-footer {
-    text-align: center;
-    padding: 40px;
-    background: #ffffff;
-    border-top: 1px solid #e8e3da;
-    color: #6b6b6b;
-    font-size: 14px;
-}
-
-</style>
-
-   
+    @media (max-width: 760px) {
+      .hero { min-height: 82vh; padding: 55px 20px; }
+      .site-nav { gap: 10px 18px; }
+      .section { padding: 76px 20px; }
+      .section-heading { grid-template-columns: 1fr; gap: 12px; }
+      .section-intro { grid-column: 1; }
+      .card, .card.wide, .card.narrow { grid-column: span 12; }
+      .card-body { padding: 25px 23px 28px; }
+    }
+  </style>
 </head>
 
-<body>
+<body data-document-role="page" data-label="PIHU — Debolina Tapadar">
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">A personal journal by Debolina Tapadar</p>
+      <h1>PIHU</h1>
+      <p class="hero-subtitle">Blogs · Poems · Cinema · Fashion · Ideology</p>
+      <div class="hero-tags" aria-label="PIHU topics">
+        <span>thoughts</span><span>stories</span><span>visual culture</span><span>questions worth asking</span>
+      </div>
+      <p class="scroll-cue">Scroll to explore ↓</p>
+    </div>
+  </header>
 
-<header>
-    <h1>PIHU</h1>
-    <p>By Debolina Tapadar</p>
-    <p>Blogs • Poems • Cinema • Fashion • Ideology</p>
-</header>
-
-<nav>
+  <nav class="site-nav" aria-label="Main navigation">
     <a href="#blogs">Blogs</a>
     <a href="#poems">Poems</a>
-    <a href="#movies">Movies</a>
+    <a href="#movies">Cinema</a>
     <a href="#fashion">Fashion</a>
-</nav>
-
-<!-- BLOG SECTION -->
-
-<section id="blogs" class="section">
-    <h2>My Blogs</h2>
-
-    <div class="blog-container">
-
-          <div class="blog-card">
-    <img src="marxism-politics.png"
-         alt="Marxism, Capitalism, Socialism and Communism"
-         class="poem-image">
-
-    <p style="text-align:center; font-size:14px; color:#8b7e6b; margin-top:-15px; margin-bottom:40px;">
-        A beginner-friendly guide to the world's most misunderstood political ideologies.
-    </p>
-
-    <div class="blog-content">
-        <h3>Marxism, Communism, Capitalism, Socialism… Why Does Everyone Keep Using These Words?</h3>
-
-        <p>
-            Capitalism, socialism, communism, Marxism, bourgeoisie and proletariat are words
-            we hear constantly—but what do they actually mean?
-            <br><br>
-
-            This article breaks down each concept in simple language, explores their origins,
-            and explains how they differ using real-world examples. Whether you're a student,
-            a history enthusiast, or simply curious about politics, this guide aims to make
-            these ideas easy to understand.
-        </p>
-
-        <a href="marxism-capitalism-explained.html" class="read-more">
-            Read Full Article →
-        </a>
-    </div>
-</div>
-
-        <div class="blog-card">
-
-    <img
-        src="global-mobility-main.png"
-        alt="The World Is Open Again — But Is It the Same World?"
-    >
-
-    <div class="blog-content">
-
-        <h3>
-            The World Is Open Again —
-            But Is It the Same World?
-        </h3>
-
-        <p>
-            Foreign investment, world travel and what has changed
-            about going global. Is the world becoming more connected,
-            or simply more complicated to navigate?
-        </p>
-
-        <a href="global-mobility.html" class="read-more">
-            Read Analysis →
-        </a>
-
-    </div>
-
-</div>
-
-
-        
-        
-      
-        
-</section>
-
-<!-- POEMS -->
-
-<section id="poems" class="section">
-    <h2>My Poems</h2>
-
-    <div class="blog-container">
-<div class="blog-card">
-    <img src="bloom.jpeg" alt="The Bloom">
-    <div class="blog-content">
-        <h3>The Bloom</h3>
-        <p>
-        She is not an illusion you want to assume,<br>
-        She is not the sky you want to look up to,<br>
-        She is just another phase you needed to face.<br><br>
-
-        Well, may not be the most beautiful, but she was happy to stay.<br>
-        She lived in those seconds which she assumed were happy.<br><br>
-
-        She never needed too much,<br>
-        She was just happy.<br><br>
-
-        Even if the star was gone from her life,<br>
-        She would rather remain same.<br><br>
-
-        Oh the world never knew her,<br>
-        She was me and I was her.<br>
-        Lost through those scars which were supposed to be mine.<br><br>
-
-        — Debo
-        </p>
-    </div>
-</div>
-          <div class="blog-card">
-            <img src="witheredflower.jpeg" 
-     alt="Withered Flower"
-     class="poem-image">
-   <p style="text-align:center; font-size:14px; color:#8b7e6b; margin-top:-15px; margin-bottom:40px;">
-A few things fade quietly.
-</p>
-    <div class="blog-content">
-        <h3>A Few Withered Flowers</h3>
-        <p>
-        I wouldn't blame myself if I am fantasizing enough,<br>
-        but it scares me to notice that the oceans which I considered deep<br>
-        are shallower than the streams which exist.<br><br>
-
-        It scares me enough how a few prioritised flowers withered so calmly<br>
-        like they never existed.<br><br>
-
-        Well I am just a human who longs to hold on to the beautiful moments.<br>
-        It scares me enough like they slipped through my hands and I never noticed.<br><br>
-
-        Now I have learned to let go,<br>
-        Let go of those dull luring smiles<br>
-        Which were never true.<br><br>
-
-        — DT
-        </p>
-    </div>
-</div>
-<div class="blog-card">
-    <img src="mellow-spice.jpeg" alt="Mellow Spice">
-    <div class="blog-content">
-        <h3>Mellow-Spice</h3>
-        <p>
-        Its time to change seasons.<br>
-        What an odd thing to say?<br><br>
-
-        But if its too hard to even relate,<br>
-        Its too hard to even grip.<br>
-        And evenings find it hard to even hold on.<br><br>
-
-        Its time to change seasons.<br>
-        Pretty much never mattered when it did.<br>
-        A lot of storms happened this season.<br>
-        It wasn't healthy, but not harder than last.<br><br>
-
-        Its time to change seasons,<br>
-        Time to touch the grass, and<br>
-        Be me again.<br><br>
-
-        What an odd thing to say?<br><br>
-
-        — Debolina Tapadar
-        </p>
-    </div>
-</div>
-        
-</section>
-
-<!-- MOVIES -->
-
-<section id="movies" class="section">
-    <h2>Movie Ideology</h2>
-
-    <div class="blog-container">
-        <div class="blog-card">
-    <img src="poer-dynasty.png" alt="Power and Inheritance">
-    <div class="blog-content">
-        <h3>The Godfather & Succession</h3>
-        <p>
-        A comparative study of feudal power and corporate capitalism through psychology, finance, and cinematic language.
-        </p>
-        <a href="godfather-succession.html" class="read-more">Read Analysis</a>
-    </div>
-</div>
-       <div class="blog-card">
-    <img src="little-women-reading.jpeg" alt="Love and Stillness in Little Women">
-    <div class="blog-content">
-        <h3>Love & Stillness — Little Women</h3>
-        <p>
-        An exploration of love as emotional maturity through Meg, Jo, Beth, and Amy — where identity stabilizes before romance settles.
-        </p>
-        <a href="little-women-love.html" class="read-more">Read Reflection</a>
-    </div>
-</div>
-
-        <div class="blog-card">
-
-    <img src="adaptation-main.png"
-         alt="When Every Story Becomes an Adaptation">
-
-    <div class="blog-content">
-
-        <h3>
-            When Every Story Becomes an Adaptation
-        </h3>
-
-        <p>
-            Are we losing authenticity, or are audiences failing to
-            look beyond the familiar? An exploration of adaptations,
-            originality, audience expectations, and the changing
-            relationship between books and cinema.
-        </p>
-
-        <a href="adaptation-authenticity.html"
-           class="read-more">
-
-            Read Analysis →
-
-        </a>
-
-    </div>
-
-</div>
-        
-       
-</section>
-    
-
-<!-- FASHION -->
-
-<section id="fashion" class="section">
-    <h2>Fashion Ideology</h2>
-
-    <div class="blog-container">
-<div class="blog-card">
-    <img src="fashion-structure.jpeg" alt="Fashion Industry Analysis">
-    <div class="blog-content">
-        <h3>The Structure of the Fashion Industry</h3>
-        <p>
-        An examination of fashion’s corporate hierarchy, cultural evolution, economic transformation, and its political dimensions.
-        </p>
-        <a href="fashion-structure-politics.html" class="read-more">Read Analysis</a>
-    </div>
-</div>
-
-       <div class="blog-card">
-
-    <img src="law-roach-main.png"
-         alt="Law Roach"
-         class="law-roach-main-image">
-
-    <div class="blog-content">
-
-        <h3>
-            Law Roach: The Stylist Who Turned Fashion Into a Story
-        </h3>
-
-        <p>
-            Fashion has always been more than clothing. Few people have
-            understood the power of fashion as storytelling better than
-            Law Roach.
-            <br><br>
-
-            From vintage clothing to unforgettable celebrity red carpets,
-            Roach has transformed styling into a form of character-building,
-            visual storytelling, and creative direction.
-        </p>
-
-        <a href="law-roach-fashion.html" class="read-more">
-            Read Full Article →
-        </a>
-
-    </div>
-
-</div>
-        <div class="blog-container">
-
-        <!-- EXISTING FASHION BLOGS -->
-
-
-        <!-- NEW CROWN ARTICLE -->
-
-        <div class="blog-card">
-
-            <img src="crown.png"
-                 alt="The Crown: When Fashion Became a Symbol of Power">
-
-            <div class="blog-content">
-
-                <h3>The Crown: When Fashion Became a Symbol of Power</h3>
-
-                <p>
-                    Fashion has always been more than clothing. From royal
-                    garments to modern red carpets, what we wear can communicate
-                    power, wealth, identity and status.
-                </p>
-
-                <p>
-                    Few objects demonstrate this better than the crown. Once a
-                    symbol of monarchy and authority, it has evolved into one
-                    of fashion's most recognizable symbols of power.
-                </p>
-
-                <a href="crown-fashion.html" class="read-more">
-                    Read More →
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<footer>
-    © 2026 PIHU BY DEBOLINA TAPADAR | All Rights Reserved
-</footer>
-
+  </nav>
+
+  <main>
+    <section id="blogs" class="section" data-document-role="page" data-label="Blogs">
+      <div class="section-heading">
+        <span class="section-number">01 / 04</span>
+        <h2>My Blogs</h2>
+        <p class="section-intro">Long-form notes on politics, society and the systems quietly shaping the way we live.</p>
+      </div>
+      <div class="section-divider"></div>
+      <div class="card-grid">
+        <article class="card wide">
+          <div class="card-image" data-label="politics"><img src="marxism-politics.png" alt="Marxism, Capitalism, Socialism and Communism" onerror="this.parentNode.classList.add('missing')"></div>
+          <div class="card-body">
+            <p class="card-kicker">Political ideas / Beginner's guide</p>
+            <h3>Marxism, Communism, Capitalism, Socialism… Why Does Everyone Keep Using These Words?</h3>
+            <p>Capitalism, socialism, communism, Marxism, bourgeoisie and proletariat are words we hear constantly—but what do they actually mean?</p>
+            <p>This article breaks down each concept in simple language, explores their origins, and explains how they differ using real-world examples.</p>
+            <a href="marxism-capitalism-explained.html" class="read-more">Read full article</a>
+          </div>
+        </article>
+        <article class="card narrow">
+          <div class="card-image" data-label="global life"><img src="global-mobility-main.png" alt="The World Is Open Again — But Is It the Same World?" onerror="this.parentNode.classList.add('missing')"></div>
+          <div class="card-body">
+            <p class="card-kicker">Global mobility / Analysis</p>
+            <h3>The World Is Open Again — But Is It the Same World?</h3>
+            <p>Foreign investment, world travel and what has changed about going global. Is the world becoming more connected, or simply more complicated to navigate?</p>
+            <a href="global-mobility.html" class="read-more">Read analysis</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="poems" class="section" data-document-role="page" data-label="Poems">
+      <div class="section-heading">
+        <span class="section-number">02 / 04</span>
+        <h2>My Poems</h2>
+        <p class="section-intro">Small rooms of feeling—written for the things that bloom, fade and stay with us anyway.</p>
+      </div>
+      <div class="section-divider"></div>
+      <div class="card-grid">
+        <article class="card poem-card">
+          <div class="card-image" data-label="poem"><img src="bloom.jpeg" alt="The Bloom" onerror="this.parentNode.classList.add('missing')"></div>
+          <div class="card-body"><p class="card-kicker">Poem / 01</p><h3>The Bloom</h3><p class="poem-text">She is not an illusion you want to assume,<br>She is not the sky you want to look up to,<br>She is just another phase you needed to face.<br><br>Well, may not be the most beautiful, but she was happy to stay.<br>She lived in those seconds which she assumed were happy.<br><br>She never needed too much,<br>She was just happy.<br><br>Even if the star was gone from her life,<br>She would rather remain same.<br><br>Oh the world never knew her,<br>She was me and I was her.<br>Lost through those scars which were supposed to be mine.<br><br>— Debo</p></div>
+        </article>
+        <article class="card poem-card">
+          <div class="card-image" data-label="poem"><img src="witheredflower.jpeg" alt="Withered Flower" onerror="this.parentNode.classList.add('missing')"></div>
+          <div class="card-body"><p class="card-kicker">Poem / 02</p><h3>A Few Withered Flowers</h3><p class="poem-text">I wouldn't blame myself if I am fantasizing enough,<br>but it scares me to notice that the oceans which I considered deep<br>are shallower than the streams which exist.<br><br>It scares me enough how a few prioritised flowers withered so calmly<br>like they never existed.<br><br>Well I am just a human who longs to hold on to the beautiful moments.<br>It scares me enough like they slipped through my hands and I never noticed.<br><br>Now I have learned to let go,<br>Let go of those dull luring smiles<br>Which were never true.<br><br>— DT</p></div>
+        </article>
+        <article class="card poem-card wide">
+          <div class="card-image" data-label="poem"><img src="mellow-spice.jpeg" alt="Mellow Spice" onerror="this.parentNode.classList.add('missing')"></div>
+          <div class="card-body"><p class="card-kicker">Poem / 03</p><h3>Mellow-Spice</h3><p class="poem-text">Its time to change seasons.<br>What an odd thing to say?<br><br>But if its too hard to even relate,<br>Its too hard to even grip.<br>And evenings find it hard to even hold on.<br><br>Its time to change seasons.<br>Pretty much never mattered when it did.<br>A lot of storms happened this season.<br>It wasn't healthy, but not harder than last.<br><br>Its time to change seasons,<br>Time to touch the grass, and<br>Be me again.<br><br>What an odd thing to say?<br><br>— Debolina Tapadar</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="movies" class="section" data-document-role="page" data-label="Cinema">
+      <div class="section-heading">
+        <span class="section-number">03 / 04</span>
+        <h2>Movie Ideology</h2>
+        <p class="section-intro">Cinema as a language for power, love, ambition, inheritance and the stories we choose to believe.</p>
+      </div>
+      <div class="section-divider"></div>
+      <p class="statement">“A film does not simply show us a world. It teaches us how to look at one.”</p>
+      <div class="card-grid">
+        <article class="card"><div class="card-image" data-label="power"><img src="poer-dynasty.png" alt="Power and Inheritance" onerror="this.parentNode.classList.add('missing')"></div><div class="card-body"><p class="card-kicker">The Godfather × Succession</p><h3>Power, Inheritance &amp; the Family Business</h3><p>A comparative study of feudal power and corporate capitalism through psychology, finance, and cinematic language.</p><a href="godfather-succession.html" class="read-more">Read analysis</a></div></article>
+        <article class="card"><div class="card-image" data-label="love"><img src="little-women-reading.jpeg" alt="Love and Stillness in Little Women" onerror="this.parentNode.classList.add('missing')"></div><div class="card-body"><p class="card-kicker">Little Women / Reflection</p><h3>Love &amp; Stillness</h3><p>An exploration of love as emotional maturity through Meg, Jo, Beth, and Amy—where identity stabilizes before romance settles.</p><a href="little-women-love.html" class="read-more">Read reflection</a></div></article>
+        <article class="card wide"><div class="card-image" data-label="adaptation"><img src="adaptation-main.png" alt="When Every Story Becomes an Adaptation" onerror="this.parentNode.classList.add('missing')"></div><div class="card-body"><p class="card-kicker">Books × Cinema / Essay</p><h3>When Every Story Becomes an Adaptation</h3><p>Are we losing authenticity, or are audiences failing to look beyond the familiar? An exploration of adaptations, originality, audience expectations, and the changing relationship between books and cinema.</p><a href="adaptation-authenticity.html" class="read-more">Read analysis</a></div></article>
+      </div>
+    </section>
+
+    <section id="fashion" class="section" data-document-role="page" data-label="Fashion">
+      <div class="section-heading">
+        <span class="section-number">04 / 04</span>
+        <h2>Fashion Ideology</h2>
+        <p class="section-intro">Clothing is never only clothing. It carries memory, hierarchy, identity, money and power.</p>
+      </div>
+      <div class="section-divider"></div>
+      <div class="card-grid">
+        <article class="card"><div class="card-image" data-label="industry"><img src="fashion-structure.jpeg" alt="Fashion Industry Analysis" onerror="this.parentNode.classList.add('missing')"></div><div class="card-body"><p class="card-kicker">Structure / Politics</p><h3>The Structure of the Fashion Industry</h3><p>An examination of fashion's corporate hierarchy, cultural evolution, economic transformation, and its political dimensions.</p><a href="fashion-structure-politics.html" class="read-more">Read analysis</a></div></article>
+        <article class="card"><div class="card-image contain" data-label="styling"><img src="law-roach-main.png" alt="Law Roach" onerror="this.parentNode.classList.add('missing')"></div><div class="card-body"><p class="card-kicker">Law Roach / Storytelling</p><h3>The Stylist Who Turned Fashion Into a Story</h3><p>From vintage clothing to unforgettable celebrity red carpets, Roach has transformed styling into character-building, visual storytelling, and creative direction.</p><a href="law-roach-fashion.html" class="read-more">Read full article</a></div></article>
+        <article class="card wide"><div class="card-image" data-label="symbolism"><img src="crown.png" alt="The Crown: When Fashion Became a Symbol of Power" onerror="this.parentNode.classList.add('missing')"></div><div class="card-body"><p class="card-kicker">Symbols / Status</p><h3>The Crown: When Fashion Became a Symbol of Power</h3><p>Fashion has always been more than clothing. From royal garments to modern red carpets, what we wear can communicate power, wealth, identity and status.</p><p>Few objects demonstrate this better than the crown—once a symbol of monarchy and authority, now one of fashion's most recognisable symbols of power.</p><a href="crown-fashion.html" class="read-more">Read more</a></div></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 PIHU BY DEBOLINA TAPADAR · All rights reserved</footer>
+
+  <script>
+    document.querySelectorAll('.card-image img').forEach(function (image) {
+      image.addEventListener('error', function () { image.parentNode.classList.add('missing'); });
+    });
+  </script>
 </body>
-
 </html>
+
 
 
 
