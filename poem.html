@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poems | PIHU</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink: #282421; --muted: #766c62; --paper: #f7f3ed; --white: #fffdfa; --line: #ded5c9; --accent: #9a5d49; --accent-soft: #ead8cc; --shadow: 0 22px 60px rgba(66, 47, 34, .12); }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: 'DM Sans', sans-serif; line-height: 1.6; }
+    a { color: inherit; }
+    .reader-header { padding: 54px 7vw 34px; border-bottom: 1px solid var(--line); background: var(--white); }
+    .eyebrow { margin: 0 0 16px; color: var(--accent); font-size: 11px; font-weight: 600; letter-spacing: .25em; text-transform: uppercase; }
+    .reader-header h1 { margin: 0; font-family: 'Cormorant Garamond', serif; font-size: clamp(58px, 10vw, 120px); font-weight: 500; line-height: .85; }
+    .reader-header p { max-width: 560px; margin: 22px 0 0; color: var(--muted); font-family: 'Cormorant Garamond', serif; font-size: 24px; }
+    .back-link { display: inline-flex; gap: 8px; margin-top: 28px; color: var(--accent); font-size: 11px; letter-spacing: .15em; text-decoration: none; text-transform: uppercase; }
+    .back-link::before { content: '←'; font-size: 16px; }
+    main { max-width: 1120px; margin: 0 auto; padding: 62px 5vw 90px; }
+    .poem-reader-card { display: none; grid-template-columns: minmax(230px, 38%) 1fr; gap: 58px; align-items: start; }
+    .poem-reader-card.is-active { display: grid; }
+    .poem-visual { position: sticky; top: 28px; overflow: hidden; border: 1px solid var(--line); background: var(--accent-soft); box-shadow: var(--shadow); }
+    .poem-visual img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+    .poem-copy { padding-top: 3px; }
+    .poem-kicker { margin: 0 0 13px; color: var(--accent); font-size: 10px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
+    .poem-copy h2 { margin: 0; font-family: 'Cormorant Garamond', serif; font-size: clamp(48px, 7vw, 82px); font-weight: 500; line-height: .92; }
+    .poem-author { margin: 18px 0 34px; color: var(--muted); font-size: 12px; letter-spacing: .08em; }
+    .poem-body { padding: 30px 0 12px; border-top: 1px solid var(--line); color: #5c5048; font-family: 'Cormorant Garamond', serif; font-size: clamp(20px, 2.1vw, 27px); line-height: 1.55; }
+    .poem-body p { margin: 0; }
+    .reader-nav { display: flex; justify-content: space-between; gap: 18px; margin-top: 42px; padding-top: 24px; border-top: 1px solid var(--line); }
+    .reader-nav a { color: var(--accent); font-size: 11px; letter-spacing: .12em; text-decoration: none; text-transform: uppercase; }
+    .reader-nav a:hover { color: var(--ink); }
+    .not-found { display: none; padding: 45px 0; color: var(--muted); font-family: 'Cormorant Garamond', serif; font-size: 28px; }
+    .not-found.is-active { display: block; }
+    footer { padding: 35px 24px; border-top: 1px solid var(--line); color: var(--muted); text-align: center; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+    @media (max-width: 760px) {
+      .reader-header { padding: 42px 20px 30px; }
+      main { padding: 45px 20px 70px; }
+      .poem-reader-card, .poem-reader-card.is-active { grid-template-columns: 1fr; gap: 34px; }
+      .poem-visual { position: static; }
+      .poem-copy h2 { font-size: 55px; }
+      .poem-body { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="reader-header">
+    <p class="eyebrow">PIHU · Debolina Tapadar</p>
+    <h1>Poems</h1>
+    <p>A quieter room for the words that need more time to be read.</p>
+    <a class="back-link" href="index.html#poems">Back to all poems</a>
+  </header>
+
+  <main>
+    <article id="non-affirming" class="poem-reader-card" data-title="Non Affirming" data-number="01">
+      <div class="poem-visual"><img src="non-affirming.png" alt="Non Affirming" onerror="this.onerror=null;this.src='poem-placeholder.png'"></div>
+      <div class="poem-copy"><p class="poem-kicker">Poem / 01</p><h2>Non Affirming</h2><p class="poem-author">~Debolina Tapadar</p><div class="poem-body"><p>My desires never overbear my boundaries,<br>Yet when I look at others they same too little,<br>But still never fulfilled.<br><br>I don't know its me or what?<br>But I have let go everything,<br>Saying its the way of the world,<br>If its not meant to be it will not be,<br>Well it seems its just not being on my part,<br>And everything comes very naturally to others.<br><br>Sad but yess can't complain.</p></div><div class="reader-nav"></div></div>
+    </article>
+
+    <article id="beyfair" class="poem-reader-card" data-title="Beyfair" data-number="02">
+      <div class="poem-visual"><img src="beyfair.png" alt="Beyfair" onerror="this.onerror=null;this.src='poem-placeholder.png'"></div>
+      <div class="poem-copy"><p class="poem-kicker">Poem / 02</p><h2>Beyfair</h2><p class="poem-author">~ Debolina Tapadar</p><div class="poem-body"><p>Seemingly through the stitches<br>I found my self bleeding.<br>It wasn't the best bakehouse<br>I wanted to visit.<br>It was just a slice or a pastry<br>I wish to taste.<br><br>How is still the eyes that fond me<br>Can't mingle the softest crisp.<br>How I found my reluctance<br>To know that none know me.<br>Yet still at peril they hold me.</p></div><div class="reader-nav"></div></div>
+    </article>
+
+    <article id="heavier-winds" class="poem-reader-card" data-title="Heavier Winds" data-number="03">
+      <div class="poem-visual"><img src="heavier-winds.png" alt="Heavier Winds" onerror="this.onerror=null;this.src='poem-placeholder.png'"></div>
+      <div class="poem-copy"><p class="poem-kicker">Poem / 03</p><h2>Heavier Winds</h2><div class="poem-body"><p>Was it too short of a branch to hold,<br>Or was the water too shallow since the beginning,<br>I never wished for someone to be qiped out from the face of earth this bad,<br>The lack of empathy, the lack of awareness,<br>Really chokes me of the hoard.<br><br>How suffocating is it to be around people,<br>Who have no idea to hold on.<br>They change shadows more than seasons.<br>They don't care enough should be an advert to say.<br><br>Probably its just time to also change seasons</p></div><div class="reader-nav"></div></div>
+    </article>
+
+    <article id="course-solomon" class="poem-reader-card" data-title="Course Solomon" data-number="04">
+      <div class="poem-visual"><img src="course-solomon.png" alt="Course Solomon" onerror="this.onerror=null;this.src='poem-placeholder.png'"></div>
+      <div class="poem-copy"><p class="poem-kicker">Poem / 04</p><h2>Course Solomon</h2><p class="poem-author">-Debolina Tapadar</p><div class="poem-body"><p>Find me in another timeline,<br>And I may look at you the same way,<br>The way that day the shadow<br>passed through my shoulder.<br>The way I passed by never looking back.<br><br>I may not know who I was,<br>Or may be I was just a pandora<br>Of an overwhelming set of true emotions.<br>I was me when I stayed,<br>But something changed when I left.<br><br>Just the fact I don't see the world<br>As what it could be,<br>But just how solemnly it is<br>Crowded, silent and shattered.</p></div><div class="reader-nav"></div></div>
+    </article>
+
+    <article id="dewpsdoom" class="poem-reader-card" data-title="DewpsDoom" data-number="05">
+      <div class="poem-visual"><img src="dewpsdoom.png" alt="DewpsDoom" onerror="this.onerror=null;this.src='poem-placeholder.png'"></div>
+      <div class="poem-copy"><p class="poem-kicker">Poem / 05</p><h2>DewpsDoom</h2><p class="poem-author">.......~Debolina Tapadar</p><div class="poem-body"><p>It amazes me<br>how i no longer delude in silence,<br>Neither am i scared of absence<br>Or the fear to be unnoticed.<br><br>Am i absorbed in ways I never noticed<br>I could ever be.<br>I don't pray to be seen<br>but be fulfilled in my ways.<br><br>I don't long for a soul, a friend or a loner<br>I am quite a keeper in my own holdings.<br>Not that i don't dare,<br>I no longer feel the necessity anymore.<br><br>How the world changes and<br>you also as a person.<br>But the same skin, same world still holds on.<br><br>..... .<br>.......</p></div><div class="reader-nav"></div></div>
+    </article>
+
+    <article id="lost" class="poem-reader-card" data-title="Lost" data-number="06">
+      <div class="poem-visual"><img src="lost.png" alt="Lost" onerror="this.onerror=null;this.src='poem-placeholder.png'"></div>
+      <div class="poem-copy"><p class="poem-kicker">Poem / 06</p><h2>Lost</h2><p class="poem-author">~DEBOLINA TAPADAR</p><div class="poem-body"><p>Oh what have I lost?<br>And what did I gain?<br>Life just slipping through my fingers<br>And I just standing in vain.<br><br>Some dear ones lost in the wheel of time,<br>And some just erased,<br>Like they never existed in the timeline.<br><br>Have I grown too old now?<br>Why do I have to bear the sorrow?<br>Yet I still in my dreams find myself wandering,<br>In the same stitched cotton white dress,<br>In the same anklets and bangles,<br>Wobbling in my small feet,<br>In the old smell of maa's home.<br><br>Can the dream be longer?<br>And yet I opened my eyes again<br>And I am again old enough to be alone now.</p></div><div class="reader-nav"></div></div>
+    </article>
+
+    <article id="the-street-light" class="poem-reader-card" data-title="The Street Light" data-number="07">
+      <div class="poem-visual"><img src="street-light.png" alt="The Street Light" onerror="this.onerror=null;this.src='poem-placeholder.png'"></div>
+      <div class="poem-copy"><p class="poem-kicker">Poem / 07</p><h2>The Street Light</h2><p class="poem-author">~Debolina Tapadar</p><div class="poem-body"><p>Walking pass the lane,<br>I saw him be a bit dimmer from far,<br>And then closer near it lost its light.<br>Just a darker spot on a well lit road.<br><br>Aren't u lonely I asked,<br>In a street full of lights u share a darker spot,<br>He replied &quot;I am not broken u see,<br>Just a bit tired,<br>Not the darkest but a bit gloomy to be honest.<br>They haven't replaced me, so may be I am happier at best&quot;<br><br>I asked &quot;But aren't u lonely?&quot;<br>Well he replied &quot;are we all not lonely in this chaos?&quot;<br>I nodded at best.<br>He asked &quot;Do u like the weather?&quot;<br>I said &quot;The chilling the weather the calmer I feel&quot;<br><br>Isn’t it odd he asked.<br>&quot;Isn’t it?&quot;<br>I started walking again,<br>Turned back after a distance,<br>He started glowing once again<br>May be just brighter than the other on the lane.<br>I smiled and started walking along.</p></div><div class="reader-nav"></div></div>
+    </article>
+
+    <article id="peculiar" class="poem-reader-card" data-title="Peculiar" data-number="08">
+      <div class="poem-visual"><img src="peculiar.png" alt="Peculiar" onerror="this.onerror=null;this.src='poem-placeholder.png'"></div>
+      <div class="poem-copy"><p class="poem-kicker">Poem / 08</p><h2>Peculiar</h2><p class="poem-author">~DT.</p><div class="poem-body"><p>Is it a fixing i am looking for<br>Or a wipe out<br>Don't really know.<br><br>Feelings are better when u don't feel much.<br>Being an empath feels like a curse.<br>Speaking your mind out is absurd.<br><br>Crazy how people change expressions<br>Through words of my mind.<br>Have u ever felt a stage,<br>Just nothing matters-no opinions or people.<br>Yeah i am high on that right now.<br><br>Crazy how subsided i have become.<br>Turning 20 next month<br>A lot of adult in the being.</p></div><div class="reader-nav"></div></div>
+    </article>
+
+    <article id="poces" class="poem-reader-card" data-title="Poces" data-number="09">
+      <div class="poem-visual"><img src="poces.png" alt="Poces" onerror="this.onerror=null;this.src='poem-placeholder.png'"></div>
+      <div class="poem-copy"><p class="poem-kicker">Poem / 09</p><h2>Poces</h2><p class="poem-author">~Debolina Tapadar</p><div class="poem-body"><p>It just haunts me,<br>How much it needs to be relatable?<br>Why can't I just be obnoxious,<br>Just alone sipping my tea<br>Across the windy river banks and shores,<br>Revering the haunting silence.<br><br>Its obscure socializing has become a part of me,<br>Yet I hated to ever talk brazen to nonsense heads.<br><br>Just want to snuk in a small room,<br>With just thousands of books,<br>A damp weather, a quilt and a lamp,<br>And u have surrendered heaven to me<br>In this afterlife.</p></div><div class="reader-nav"></div></div>
+    </article>
+
+    <article id="bluemoon" class="poem-reader-card" data-title="Bluemoon" data-number="10">
+      <div class="poem-visual"><img src="bluemoon.png" alt="Bluemoon" onerror="this.onerror=null;this.src='poem-placeholder.png'"></div>
+      <div class="poem-copy"><p class="poem-kicker">Poem / 10</p><h2>Bluemoon</h2><div class="poem-body"><p>Did i shiver myself in ur presence?<br>Oh yes I did.<br>I ran down the peep hole<br>Just to take glances<br>Of you smiling across the room.<br><br>Oh how generous is it,<br>To be around once in a while.<br>How funny is it to find urself giggling,<br>Through the smiles of others?<br><br>And how odd is it just one knows<br>The other exists?<br>It seemed to be odd as well as<br>The quietest day in a while.</p></div><div class="reader-nav"></div></div>
+    </article>
+
+    <article id="jasmines" class="poem-reader-card" data-title="Jasmines" data-number="11">
+      <div class="poem-visual"><img src="jasmines.png" alt="Jasmines" onerror="this.onerror=null;this.src='poem-placeholder.png'"></div>
+      <div class="poem-copy"><p class="poem-kicker">Poem / 11</p><h2>Jasmines</h2><div class="poem-body"><p>Would you bring me those jasmines?<br>Would you bring me those scrappers<br>In the oil pastel boxes?<br>Oh would you bring me the most simple</p></div><div class="reader-nav"></div></div>
+    </article>
+
+    <article id="me" class="poem-reader-card" data-title="Me" data-number="12">
+      <div class="poem-visual"><img src="me.png" alt="Me" onerror="this.onerror=null;this.src='poem-placeholder.png'"></div>
+      <div class="poem-copy"><p class="poem-kicker">Poem / 12</p><h2>Me</h2><div class="poem-body"><p>Why did she remain as a stain,<br>Rather than a story,<br>How dark were those hallows,<br>Where even the hand reached out for help,<br>Seemed dark.<br><br>Why was always there a pause,<br>Before those wishes.<br>May be it didn't mean to be as loud,<br>Or she was just not enough.<br><br>Weighing by the tongs,<br>It was just thrown and betrayed.<br>As may be it wasn't her story.<br><br>Oh to be delusional was a hobby,<br>May be being avoided was a bliss.<br><br>Lets just break ...<br>Till she cant reply,<br>Till her bone breaks and her head bleeds,<br>And dies through every breaking moment<br>The unloved undeserving ungrateful birth</p></div><div class="reader-nav"></div></div>
+    </article>
+
+    <p id="not-found" class="not-found">That poem could not be found. Please return to the Poems section.</p>
+  </main>
+
+  <footer>© 2026 PIHU BY DEBOLINA TAPADAR · All rights reserved</footer>
+
+  <script>
+    var poemCards = Array.from(document.querySelectorAll('.poem-reader-card'));
+    var notFound = document.getElementById('not-found');
+
+    function showPoem() {
+      var requested = window.location.hash.slice(1) || poemCards[0].id;
+      var activeIndex = poemCards.findIndex(function (card) { return card.id === requested; });
+      var valid = activeIndex !== -1;
+      if (!valid) activeIndex = 0;
+
+      poemCards.forEach(function (card, index) {
+        card.classList.toggle('is-active', valid && index === activeIndex);
+      });
+      notFound.classList.toggle('is-active', !valid);
+
+      if (valid) {
+        var active = poemCards[activeIndex];
+        document.title = active.dataset.title + ' | PIHU';
+        var previous = activeIndex > 0 ? poemCards[activeIndex - 1] : null;
+        var next = activeIndex < poemCards.length - 1 ? poemCards[activeIndex + 1] : null;
+        var nav = active.querySelector('.reader-nav');
+        nav.innerHTML = '';
+        if (previous) nav.insertAdjacentHTML('beforeend', '<a href="#' + previous.id + '">← ' + previous.dataset.title + '</a>');
+        if (next) nav.insertAdjacentHTML('beforeend', '<a href="#' + next.id + '">' + next.dataset.title + ' →</a>');
+      }
+    }
+
+    window.addEventListener('hashchange', showPoem);
+    showPoem();
+  </script>
+</body>
+</html>
