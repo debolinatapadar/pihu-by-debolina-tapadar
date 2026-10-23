@@ -183,7 +183,9 @@
     .poem-card .card-image img { min-height: 210px; filter: grayscale(22%) sepia(10%) contrast(.94); }
     .poem-card .card-body { padding-top: 28px; }
     .poem-card .card h3 { font-size: 35px; }
-    .poem-text { font-family: 'Cormorant Garamond', serif; font-size: 17px !important; line-height: 1.55 !important; color: #5c5048 !important; }
+    .poem-text { display: none; }
+    .poem-preview { margin: 0; color: #5c5048; font-family: 'Cormorant Garamond', serif; font-size: 18px; line-height: 1.55; }
+    .poem-card .read-more { margin-top: 22px; }
 
     .statement {
       margin: 0 auto 30px;
@@ -278,7 +280,7 @@
         <p class="section-intro">Small rooms of feeling—written for the things that bloom, fade and stay with us anyway.</p>
       </div>
       <div class="section-divider"></div>
-      <p class="image-note">Upload your poem images beside <code>index.html</code> with these exact names: <code>non-affirming.png</code>, <code>beyfair.png</code>, <code>heavier-winds.png</code>, <code>course-solomon.png</code>, <code>dewpsdoom.png</code>, <code>lost.png</code>, <code>street-light.png</code>, <code>peculiar.png</code>, <code>poces.png</code>, <code>bluemoon.png</code>, <code>jasmines.png</code> and <code>me.png</code>.</p>
+      <p class="image-note">Upload your poem images beside <code>index.html</code> with the exact <code>.png</code> names written in each card: <code>non-affirming.png</code>, <code>beyfair.png</code>, <code>heavier-winds.png</code>, <code>course-solomon.png</code>, <code>dewpsdoom.png</code>, <code>lost.png</code>, <code>street-light.png</code>, <code>peculiar.png</code>, <code>poces.png</code>, <code>bluemoon.png</code>, <code>jasmines.png</code> and <code>me.png</code>.</p>
       <div class="card-grid">
         <article class="card poem-card">
           <div class="card-image" data-label="poem"><img src="non-affirming.png" alt="Non Affirming" onerror="this.parentNode.classList.add('missing')"></div>
@@ -364,12 +366,33 @@
   <footer>© 2026 PIHU BY DEBOLINA TAPADAR · All rights reserved</footer>
 
   <script>
+    function poemSlug(title) {
+      return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    }
+
+    document.querySelectorAll('#poems .poem-card').forEach(function (card) {
+      var title = card.querySelector('h3').textContent.trim();
+      var poemText = card.querySelector('.poem-text');
+      var preview = document.createElement('p');
+      var previewText = poemText.textContent.replace(/\s+/g, ' ').trim();
+      preview.className = 'poem-preview';
+      preview.textContent = previewText.length > 150 ? previewText.slice(0, 150).trim() + '…' : previewText;
+      poemText.parentNode.insertBefore(preview, poemText);
+
+      var readLink = document.createElement('a');
+      readLink.className = 'read-more';
+      readLink.href = 'poem.html#' + poemSlug(title);
+      readLink.textContent = 'Read poem';
+      poemText.parentNode.appendChild(readLink);
+    });
+
     document.querySelectorAll('.card-image img').forEach(function (image) {
       image.addEventListener('error', function () { image.parentNode.classList.add('missing'); });
     });
   </script>
 </body>
 </html>
+
 
 
 
